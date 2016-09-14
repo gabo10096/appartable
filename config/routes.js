@@ -36,7 +36,8 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  'POST /usuario' : 'UsuarioController.createUsuario',
+  'POST /registro/negocio' : 'NegocioController.createNegocio',
+  'GET /negocios' : 'NegocioController.readNegocios',
   'GET /usuarios' : 'UsuarioController.readUsuarios',
   'GET /usuario/:id' : 'UsuarioController.readUsuario',
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Registro de Negocios</title>
+</head>
+<body>
+<form>
+	<h1>Registro de Negocios.</h1>
+	{{ registro | json }} 
+	<p>
+		<label>
+			Razón social:
+			<input ng-model="registro.razon_social"></input>
+		</label>
+	</p>
+	<p>
+		<label>
+			Nombre del negocio:
+			<input ng-model="registro.nombre_negocio"></input>
+		</label>
+	</p>
+	<p>
+		<label>
+			Nombre del encargado:
+			<input ng-model="registro.nombre_encargado"></input>
+		</label>
+	</p>
+	<p>
+		<label>
+			Usuario:
+			<input ng-model="registro.usuario"></input>
+		</label>
+	</p>
+	<p>
+		<label>
+			Contraseña:
+			<input ng-model="registro.password"></input>
+		</label>
+	</p>
+	<p>
+		<button ng-click='registraNegocio()'>Guardar</button>
+	</p>
+</form>
+</body>
+</html>

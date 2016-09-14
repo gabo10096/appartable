@@ -8,15 +8,19 @@
 module.exports = {
 
 	createNegocio: function (req, res){
+		
 		var body = req.body;
-		var params = {
+		
+		var paramsNegocio = {
 			razon_social: body.razon_social,
 			nombre_negocio: body.nombre_negocio,               
 			nombre_encargado: body.nombre_encargado,
-			usuario: body.id_usuario,
-			status_negocio: body.status_negocio
+			usuario: body.usuario,
+			status_negocio: true, 
+			sucursales: []
 		};
-		Negocio.create(params, function (err, negocio){
+		
+		Negocio.create(paramsNegocio, function (err, negocio){
 			if (err) {
 				return res.status(500).send({
 					success: false, 
@@ -29,9 +33,55 @@ module.exports = {
 					message: 'Negocio Not Found. Creating Negocio.'
 				});
 			};
+
+			var paramsUsuario = {
+				usuario: body.usuario,
+				password: body.password,
+				tipo_usuario: 'administrador',
+				id_negocio: negocio.id,
+				id_sucursal: 'todas'
+			};
+
+			Usuario.create(paramsUsuario, function (err, usuario){
+				if (err) {
+					return res.status(500).send({
+						success: false,
+						message: 'Internal Server Error. Creating usuario.'
+					});
+				};
+				if (!usuario) {
+					return res.status(400).send({
+						success: false,
+						message: 'Usuario Not Found.'
+					});
+				};
+				return res.status(200).send({
+					success: true,
+					message: 'Sucursal y Usuario creado exitosamente.',
+					negocio: negocio,
+					usuario: usuario
+				});
+			});
+		});
+	},
+
+	readNegocios: function (req, res){
+		Negocio.find(function (err, negocios){
+			if (err) {
+				return res.status(500).send({
+					success: false,
+					message: 'Internal Server Error. Finding Negocios.'
+				});
+			};
+			if (!negocios) {
+				return res.status(400).send({
+					success: false,
+					message: 'Negocios Not Found.'
+				});
+			};
 			return res.status(200).send({
 				success: true,
-				negocio: negocio
+				negocios: negocios
 			});
 		});
 	}
