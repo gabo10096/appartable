@@ -40,6 +40,8 @@ module.exports.routes = {
   'GET /negocios' : 'NegocioController.readNegocios',
   'GET /usuarios' : 'UsuarioController.readUsuarios',
   'GET /usuario/:id' : 'UsuarioController.readUsuario',
+  'POST /login' : 'AuthController.login',
+  'GET /logout' : 'AuthController.logout',
 
   /***************************************************************************
   *                                                                          *
