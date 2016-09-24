@@ -36,6 +36,8 @@ module.exports.routes = {
     view: 'homepage'
   },
 
+  'GET /cron' : 'UsuarioController.createAutomatico', // mandar este get para activar el cron que crea el administrador appartable
+
   'POST /registro/negocio' : 'NegocioController.createNegocio',
   'GET /negocios' : 'NegocioController.readNegocios',
   'GET /usuarios' : 'UsuarioController.readUsuarios',

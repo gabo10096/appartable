@@ -13,6 +13,9 @@ module.exports = {
   	id_usuario:{
   		type: 'string'
   	},
+    nombre: {
+      type: 'string'
+    },
   	usuario:{
   		type: 'string',
   		unique: true
@@ -21,7 +24,7 @@ module.exports = {
   		type: 'string'
   	},
   	tipo_usuario:{
-  		type: 'string' // administrador || operador 
+  		type: 'string' 
   	},
   	id_negocio:{
   		type: 'string'

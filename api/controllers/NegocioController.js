@@ -12,6 +12,7 @@ module.exports = {
 		var body = req.body;
 		
 		var paramsNegocio = {
+			rfc: body.rfc,
 			razon_social: body.razon_social,
 			nombre_negocio: body.nombre_negocio,               
 			nombre_encargado: body.nombre_encargado,
@@ -35,11 +36,12 @@ module.exports = {
 			};
 
 			var paramsUsuario = {
+				nombre: body.nombre_encargado,
 				usuario: body.usuario,
 				password: body.password,
-				tipo_usuario: 'administrador',
+				tipo_usuario: 'restaurante',
 				id_negocio: negocio.id,
-				id_sucursal: 'todas'
+				id_sucursal: 'all'
 			};
 
 			Usuario.create(paramsUsuario, function (err, usuario){

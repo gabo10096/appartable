@@ -23,9 +23,9 @@ module.exports = {
                     user: user
                 });
             }
-            console.log(user)
+            //console.log(user)
             req.logIn(user, function(err) {
-            	console.log('user')
+            	//console.log('user')
                 if (err) res.send(err);
     
                 return res.send({
@@ -39,6 +39,7 @@ module.exports = {
 
     logout: function(req, res) {
         req.logout();
+        //res.redirect('/');
     }
 	
 };

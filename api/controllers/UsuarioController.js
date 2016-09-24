@@ -7,6 +7,14 @@
 
 module.exports = {
 
+	//crea administrador appartable automaticamente
+	createAutomatico: function (req, res){
+		cron.activate()
+		return res.send({
+			success: true
+		})				
+	},
+
 	createUsuario: function (req, res){
 		
 		var body = req.body;
