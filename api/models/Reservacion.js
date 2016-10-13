@@ -8,27 +8,44 @@
 module.exports = {
 
   attributes: {
+
   	id_reservacion: {
   		type: 'string'
   	},
+
   	id_negocio:{
   		type: 'string'
   	},
+
   	id_sucursal:{
   		type: 'string'
   	},
-  	id_cliente: {
-  		type: 'string'
-  	},
+
   	num_mesa: {
   		type: 'integer'
   	},
-  	status_reservacion:{
+
+  	status:{
   		type: 'boolean'
   	},
-  	fecha_reservacion: {
-  		type: 'date'
-  	}
+
+  	fecha: {
+  		type: 'string'
+  	},
+
+    hora: {
+      type: 'string'
+    },
+
+    alias: {
+      type: 'string'
+    },
+
+    qrCode: {
+      type: 'string'
+    }
+
   }
+  
 };
 

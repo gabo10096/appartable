@@ -12,45 +12,65 @@ module.exports = {
   	id_negocio: {
   		type: 'string'
   	},
-  	razon_social: {
+
+  	fullName: {
   		type: 'string'
   	},
-  	nombre_negocio: {
+
+  	smallName: {
   		type: 'string'
   	},
-  	nombre_encargado: {
+
+    rfc: {
+      type: 'string'
+    },
+
+    logo: {
+      type: 'string'
+    },
+
+  	encargado: {
   		type: 'string'
   	},
-  	usuario: {
+
+  	user: {
   		type: 'string'
   	},
-  	status_negocio: {
+
+    location: Object, /* {lat,long} */
+
+  	status: {
   		type: 'boolean'
   	},
+
   	sucursales: Array, 
+
   	/*
-  	sucursales:[{
-		id_sucursal,
-		usuario,
-		direccion,
-		coordenadas: {
-			latitud,
-			longitud
-		},
-		mesas:[{
-			num_mesa,
-			status_mesa
-		}],
-		menu:{
-			desayunos, 
-			comidas,
-			cenas, 
-			bebidas,
-			postres,
-		},
-		descripcion
+
+  	sucursal:[{
+  		id_sucursal,
+      encargado,
+  		user,
+      tables:[{
+        num_mesa,
+        status
+      }],
+      location: {
+        lat,
+        long
+      },
+      menu:[{
+        name,
+        category,
+        description,
+        price,
+        photo,
+        status
+      }]
   	}]
+
   	*/
   }
+  
 };
 

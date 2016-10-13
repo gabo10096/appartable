@@ -10,25 +10,36 @@ var bcrypt = require('bcrypt');
 module.exports = {
 
   attributes: {
-  	id_usuario:{
+
+  	id_user:{
   		type: 'string'
   	},
-    nombre: {
+
+    fullName: {
       type: 'string'
     },
-  	usuario:{
+
+  	userName:{
   		type: 'string',
   		unique: true
   	},
+
   	password:{
   		type: 'string'
   	},
-  	tipo_usuario:{
+
+  	rol:{
   		type: 'string' 
   	},
+
+    status:{
+      type: 'boolean'
+    },
+
   	id_negocio:{
   		type: 'string'
   	},
+
   	id_sucursal:{
   		type: 'string'
   	},
@@ -38,6 +49,7 @@ module.exports = {
       delete obj.password;
       return obj;
     }
+    
   },
 
     beforeCreate: function(user, cb) {
