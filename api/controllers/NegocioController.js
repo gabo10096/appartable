@@ -10,14 +10,17 @@ module.exports = {
 	createNegocio: function (req, res){
 		
 		var body = req.body;
-		
+
 		var paramsNegocio = {
+			//id_negocio,
+			fullName: body.fullName,
+			smallName: body.smallName,
 			rfc: body.rfc,
-			razon_social: body.razon_social,
-			nombre_negocio: body.nombre_negocio,               
-			nombre_encargado: body.nombre_encargado,
+			logo: body.logo,
+			encargado: body.encargado,
 			usuario: body.usuario,
-			status_negocio: true, 
+			location: body.location,
+			status: true,
 			sucursales: []
 		};
 		
@@ -36,10 +39,12 @@ module.exports = {
 			};
 
 			var paramsUsuario = {
-				nombre: body.nombre_encargado,
+				//id_suser,
+				fullName: body.encargado,
 				usuario: body.usuario,
 				password: body.password,
-				tipo_usuario: 'restaurante',
+				rol: 'administrador',
+				status: true,
 				id_negocio: negocio.id,
 				id_sucursal: 'all'
 			};

@@ -20,7 +20,8 @@ module.exports = {
 
             if ((err) || (!user)) {
                 return res.status(500).json({
-                    user: user
+                    user: user,
+                    message: 'koo'
                 });
             }
             //console.log(user)

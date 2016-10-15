@@ -33,7 +33,7 @@ module.exports = {
   		type: 'string'
   	},
 
-  	user: {
+  	usuario: {
   		type: 'string'
   	},
 

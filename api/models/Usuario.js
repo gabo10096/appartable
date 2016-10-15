@@ -19,7 +19,7 @@ module.exports = {
       type: 'string'
     },
 
-  	userName:{
+  	usuario:{
   		type: 'string',
   		unique: true
   	},

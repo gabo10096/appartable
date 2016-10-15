@@ -30,9 +30,9 @@ passport.use(new LocalStrategy({
               message: 'Invalid Password'
             });
           var returnUser = {
+            id: user.id,
             usuario: user.usuario,
-            createdAt: user.createdAt,
-            id: user.id
+            rol: user.rol
           };
           return done(null, returnUser, {
             message: 'Logged In Successfully'
