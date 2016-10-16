@@ -49,6 +49,7 @@ module.exports = {
 
   	sucursal:[{
   		id_sucursal,
+      nombre,
       encargado,
   		user,
       tables:[{
