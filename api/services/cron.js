@@ -61,10 +61,11 @@ function createAdminAppartable() {
 			//console.log('Ya existe el adminAppartable')
 		}else{
 			var params = {
-				nombre: 'ApparTable',
+				fullName: 'ApparTable',
 				usuario: 'appartable',
 				password: '123',
-				tipo_usuario: 'appartable',
+				rol: 'appartable',
+				status: true,
 				id_negocio: 'all',
 				id_sucursal: 'all'
 			};
