@@ -45,32 +45,8 @@ module.exports = {
 
   	sucursales: Array, 
 
-  	/*
+    insumos: Array,
 
-  	sucursal:[{
-  		id_sucursal,
-      nombre,
-      encargado,
-  		user,
-      tables:[{
-        num_mesa,
-        status
-      }],
-      location: {
-        lat,
-        long
-      },
-      menu:[{
-        name,
-        category,
-        description,
-        price,
-        photo,
-        status
-      }]
-  	}]
-
-  	*/
   }
   
 };

@@ -36,13 +36,24 @@ module.exports.routes = {
     view: 'homepage'
   },
 
+  // ACTOR APPARTABLE
   'GET /cron' : 'UsuarioController.createAutomatico', // mandar este get para activar el cron que crea el administrador appartable
 
+  // NEGOCIOS
   'POST /registro/negocio' : 'NegocioController.createNegocio',
-  'POST /registro/sucursal' : 'NegocioController.createSucursal',
   'GET /negocios' : 'NegocioController.readNegocios',
   'GET /negocio/:id' : 'NegocioController.readNegocio',
+
+  // SUCURSALES
+  'POST /registro/sucursal' : 'NegocioController.createSucursal',
   'GET /negocio/:idn/sucursal/:ids' : 'NegocioController.readNegocioSucursal',
+
+  // INSUMOS
+  'POST /negocio/insumos' : 'NegocioController.createInsumo',
+  'GET /insumos/:id' : 'NegocioController.readInsumos',
+  'POST /delete/insumo' : 'NegocioController.deleteInsumo',
+
+  // USUARIOS  
   'GET /usuarios' : 'UsuarioController.readUsuarios',
   'GET /usuario/:id' : 'UsuarioController.readUsuario',
   'POST /login' : 'AuthController.login',
