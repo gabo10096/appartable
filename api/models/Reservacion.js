@@ -41,9 +41,7 @@ module.exports = {
       type: 'string'
     },
 
-    qrCode: {
-      type: 'string'
-    }
+    //qrCode: Object
 
   }
   

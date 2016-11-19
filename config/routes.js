@@ -59,6 +59,13 @@ module.exports.routes = {
   'POST /login' : 'AuthController.login',
   'GET /logout' : 'AuthController.logout',
 
+  // RESERVACION
+
+  'POST /registro/reservacion' : 'ReservacionController.creteReservacion',
+  'GET /reservaciones' : 'ReservacionController.readReservaciones',
+  'GET /qrcode/:id' : 'ReservacionController.viewQRcode',
+  'DELETE /delete/reservacion/:id' : 'ReservacionController.deleteReservacion',
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
