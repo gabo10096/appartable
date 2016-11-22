@@ -60,8 +60,8 @@ module.exports.routes = {
   'GET /logout' : 'AuthController.logout',
 
   // RESERVACION
-
-  'POST /registro/reservacion' : 'ReservacionController.creteReservacion',
+  'POST /registro/reservacion/1' : 'ReservacionController.creteReservacion', // no guarda imagen  
+  'POST /registro/reservacion/2' : 'ReservacionController.createReservacion2', // si gurda imagen
   'GET /reservaciones' : 'ReservacionController.readReservaciones',
   'GET /qrcode/:id' : 'ReservacionController.viewQRcode',
   'DELETE /delete/reservacion/:id' : 'ReservacionController.deleteReservacion',

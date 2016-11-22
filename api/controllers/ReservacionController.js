@@ -5,7 +5,8 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
-qr = require('qr-image')
+var qr = require('qr-image');
+var fs = require('fs');
 
 module.exports = {
 
@@ -43,6 +44,53 @@ module.exports = {
 			});
 		});
 	},
+
+	// esta funcion es la misma que "creteReservacion" pero gurda la imagen en una carpeta del proyecto
+
+	createReservacion2: function (req, res){
+
+		var body = req.body;
+
+		var paramsReserva = {
+			id_negocio: body.id_negocio,
+			id_sucursal: body.id_sucursal,
+			num_mesa: body.num_mesa,
+			status: body.status,
+			fecha: body.fecha,
+			hora: body.hora,
+			alias: body.alias
+			//qrCode: null
+		};
+	
+		Reservacion.create(paramsReserva, function (err, reservacion){
+			if (err) {
+				return res.status(500).send({
+					success: false,
+					message: 'Internal Server Error. Registro de Reservacion.'
+				});
+			};
+			if (!reservacion) {
+				return res.status(404).send({
+					success: false,
+					message: 'Reservación no encontada.'
+				});
+			};
+
+			var data = JSON.stringify(reservacion);
+
+			var code = qr.image(data, { type: 'svg' });
+			var output = fs.createWriteStream('qrReservaciones/' + reservacion.id)
+ 
+			code.pipe(output);
+
+			return res.json({
+				success: true,
+				reservacion: reservacion
+			});
+		});
+	},
+
+	// esta funcion muestra el codigo qr generado a partir de la reservacion creada en la funcion "creteReservacion"
 
 	viewQRcode: function (req, res){
 		
